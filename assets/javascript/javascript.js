@@ -1,10 +1,10 @@
-let searchTerms = ["Iron Man", "The Hulk", "Spider Man", "Nightcrawler"];
+let searchTerms = ["Iron Man", "Hulk", "Spider-Man", "Nightcrawler"];
 
 
 // need a function that will add the search term to searchTerms array and run the for each function
 // giphy api key: QjnsrlcRR1bPCUn4xTBC8QCO1Ta58Sp9
-// marvel api key: f907289dd290b05286371a02243fb091
-// base marvel url: https://gateway.marvel.com
+// supehero apikey: 10211780581253538
+// base superhero url: http://superheroapi.com/api/10211780581253538/search/
 
     
 $(document).ready(function () {
@@ -100,24 +100,66 @@ $(document).ready(function () {
             clickedGif.attr("data-state", "still");
         }
         });
-/*
+
     $(document).on("click", ".buttonSearch", function() {
         event.preventDefault();
         let searchValue = $(this).attr("data-superhero");
-        let ts = $.now();
-        let publickey = "f907289dd290b05286371a02243fb091";
-        let privatekey = "4bc439f37cd4eb21850494135779844c28ac4ae5";
-        let queryURL = "http://gateway.marvel.com/v1/public/characters?name=";
+        let lowerSearchValue = searchValue.toLowerCase();
+        console.log(lowerSearchValue);
+        let queryURL = "http://superheroapi.com/api/10211780581253538/search/" + lowerSearchValue;
 
         $.ajax({ 
             url: queryURL,
             method: "GET",
         })
         .then(function(response) {
-            $("#superheroInfo").empty();
             console.log(response);
+            let result = response.results;
+            for (var i = 0; i < result.length; i++) {
 
+                $("#heroName").empty();
+                let newName = $("<h1>");
+                let heroName = result[i].name;
+                newName.text(heroName);
+                $("#heroName").prepend(newName);
+
+                $("#heroFullName").empty();
+                let newheroName = $("<p>");
+                let heroFullName = result[i].biography["full-name"];
+                newheroName.text(heroFullName);
+                $("#heroFullName").append(newheroName);
+
+                $("#heroAlterEgo").empty();
+                let newheroEgo = $("<p>");
+                let heroEgo = result[i].biography["alter-egos"];
+                newheroEgo.text(heroEgo);
+                $("#heroAlterEgo").append(newheroEgo);
+
+                $("#heroBirth").empty();
+                let newheroBirth = $("<p>");
+                let heroBirth = result[i].biography["place-of-birth"];
+                newheroBirth.text(heroBirth);
+                $("#heroBirth").append(newheroBirth);
+
+                $("#heroPublisher").empty();
+                let newheroPublish = $("<p>");
+                let heroPublish = result[i].biography["publisher"];
+                newheroPublish.text(heroPublish);
+                $("#heroPublisher").append(newheroPublish);
+
+                $("#heroConnections").empty();
+                let newheroConnection = $("<p>");
+                let heroConnection = result[i].connections["group-affiliation"];
+                newheroConnection.text(heroConnection);
+                $("#heroConnections").append(newheroConnection);
+
+                $("#heroImg").empty();
+                let newheroImage = $("<img>");
+                let heroImage = result[i].image.url;
+                newheroImage.attr("src", heroImage);
+                $("#heroImg").append(newheroImage);
+            }
         })
     })
-    */
+    
 })
