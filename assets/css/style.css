@@ -1,0 +1,71 @@
+.jumbotron {
+    height: 200px;
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+    background: url("https://images6.alphacoders.com/705/705204.jpg");
+    color: white;
+    background-position-y: -150px;
+    text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+        1px 1px 0 #000;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+#searched {
+    margin-bottom: 5px;
+}
+
+#superheroSearch {
+    border: 1px;
+    border-color: black;
+    border-style: groove;
+}
+
+#searchButtons {
+    height: 50px;
+    width: 150px;    
+    border: 1px;
+    border-color: black;
+    border-style: groove;
+    background: rgb(221, 123, 123);
+}
+
+#superheroButtons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#searchButton {
+    background: rgb(221, 123, 123);
+    color: black;
+    border: 1px;
+    border-color: black;
+    border-style: groove;
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+body {
+    background: rgb(165, 161, 161);
+}
+
+.item {
+    border: 1px;
+    border-color: black;
+    border-style: solid;
+    background: white;
+    align-content: center;
+    text-align:center;
+}
+
+form {
+    background: white;
+}
