@@ -106,7 +106,7 @@ $(document).ready(function () {
         let searchValue = $(this).attr("data-superhero");
         let lowerSearchValue = searchValue.toLowerCase();
         console.log(lowerSearchValue);
-        let queryURL = "http://superheroapi.com/api/10211780581253538/search/" + lowerSearchValue;
+        let queryURL = "https://superheroapi.com/api/10211780581253538/search/" + lowerSearchValue;
 
         $.ajax({ 
             url: queryURL,
